@@ -18,5 +18,10 @@ for item in list1:
         print(pair[0], " = ", pair[1])
     else: 
         print(pair[0], " = null")
-    
 
+import data.coupon
+
+# take the line and split it into lists of lists
+result = data.coupon.generate(line1)
+
+print(result)
