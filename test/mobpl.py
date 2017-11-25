@@ -3,7 +3,6 @@ import urllib.request
 import ssl
 
 #specify the url
-#address = "https://mobile.bet365.com/"
 address = "https://mobile.bet365.com/sport/sportsdata/sportsdata.ashx?pd=%23AS%23B2%23C1%23D17%23&cid=197&cg=0&lid=1&zid=1"
 
 # These are standard bet365 headers
@@ -16,7 +15,7 @@ headers={
 'Host' : 'mobile.bet365.com',
 'Pragma' : 'no-cache',
 'Referer' : 'https://mobile.bet365.com/',
-'User-Agent' : 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46/56311 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
+'User-Agent' : 'Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46/563211 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1',
 }
 
 print("Using URL: ", address)
