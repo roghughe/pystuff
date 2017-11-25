@@ -21,7 +21,7 @@ class B365Requestor(Requestor.Requestor):
    
     #defaultCookies = 'session=processform=0; pstk=B2F39E7B866A4F13A1207FC98790BD10000003; aps03=lng=1&tzi=1&ct=197&cst=0&cg=0&oty=1' 
  
-    def __init__(self):
+    def __init__(self, pstk='B2F39E7B866A4F13A1207FC98790BD1000000'):
         print("This is the B365 constructor")
         super().__init__(self.defaultHeaders)
         
@@ -33,5 +33,8 @@ class B365Requestor(Requestor.Requestor):
               True, False, '/', True, False, '1370002304', False, 'TestCookie', None, None, False)
         super().addCookie(c)
     
+        c = Cookie(None, 'pstk', pstk, '80', True, '.bet365.com', 
+              True, False, '/', True, False, '1370002304', False, 'TestCookie', None, None, False)
+        super().addCookie(c)
  
     
