@@ -7,7 +7,7 @@ from http.cookiejar import Cookie
 
 
 class B365Requestor(Requestor.Requestor):
-       
+           
     defaultHeaders={ 
         'Accept' : 'text/html',
         'Accept-Language' : 'en-US,en;q=0.8',
@@ -25,16 +25,21 @@ class B365Requestor(Requestor.Requestor):
         print("This is the B365 constructor")
         super().__init__(self.defaultHeaders)
         
+        # some 'constants' to use in the creation of the cookies
+        expiry = '1370002304'
+        cookie_host = '.bet365.com'
+        root = '/'
+        port = '80'
+        
         # Cookie(version, name, value, port, port_specified, domain,
         # domain_specified, domain_initial_dot, path, path_specified,
         # secure, expires, discard, comment, comment_url, rest, rfc2109=False)
-
-        c = Cookie(None, 'session', 'processform=0', '80', True, '.bet365.com', 
-              True, False, '/', True, False, '1370002304', False, 'TestCookie', None, None, False)
-        super().addCookie(c)
-    
-        c = Cookie(None, 'pstk', pstk, '80', True, '.bet365.com', 
-              True, False, '/', True, False, '1370002304', False, 'TestCookie', None, None, False)
+        c = Cookie(0, 'session', 'processform=0', port, True, cookie_host, 
+              True, False, root, True, False, expiry, False, 'TestCookie', None, None, False)
         super().addCookie(c)
  
+        c = Cookie(0, 'pstk', pstk, port, True, cookie_host, 
+              True, False, root, True, False, expiry, False, 'TestCookie', None, None, False)
+        super().addCookie(c)
     
+        

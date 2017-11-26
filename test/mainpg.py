@@ -9,7 +9,6 @@ req = B365Requestor.B365Requestor()
 # Call a method
 result = req.getHeaders()
 
-req.clearCookies()
 
 response, cj = req.requestPage("https://www.bet365.com")
 
